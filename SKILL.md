@@ -1,12 +1,12 @@
 ---
 name: html-review-skill
-description: Render a document, spec, code change, or design proposal into a side-by-side review HTML — content + rationale annotations + per-section feedback collector. Pluggable design system: bundles the DNA1 ("Evidence Poet") spec as the default visual style, accepts any external spec following the spec-interface contract. Triggers on "render this as a review HTML", "build a review HTML for X", "review this doc in HTML side-by-side", "用 HTML 出 review", "/html-review". Carries two layout archetypes (right-rail · stacked), two tag profiles (editorial · technical), multi-layer review roles, DIFF mode for incremental re-reviews, and a feedback collector that serializes per-section ratings to clipboard. Default visual style = DNA1 (sharp corners · 3-font tension · CJK-safe font stacks · gold accent for important paths). To use a different design system, pass --spec=<path> or have <project>/.claude/design.md present and the skill picks it up. Do NOT trigger for general design feedback, prose rewriting without a visual review surface, or installing a design system.
+description: Render a document, spec, code change, or design proposal into a side-by-side review HTML — content + rationale annotations + per-section feedback collector. Pluggable design system: bundles the Evidence Poet spec as the default visual style, accepts any external spec following the spec-interface contract. Triggers on "render this as a review HTML", "build a review HTML for X", "review this doc in HTML side-by-side", "用 HTML 出 review", "/html-review". Carries two layout archetypes (right-rail · stacked), two tag profiles (editorial · technical), multi-layer review roles, DIFF mode for incremental re-reviews, and a feedback collector that serializes per-section ratings to clipboard. Default visual style = Evidence Poet (sharp corners · 3-font tension · CJK-safe font stacks · gold accent for important paths). To use a different design system, pass --spec=<path> or have <project>/.claude/design.md present and the skill picks it up. Do NOT trigger for general design feedback, prose rewriting without a visual review surface, or installing a design system.
 ---
 
 # html-review-skill
 
 A standalone content-review-HTML production engine for Claude. Pluggable visual style: ships
-with the DNA1 ("Evidence Poet") spec bundled as the default. Accept any external design
+with the Evidence Poet spec bundled as the default. Accept any external design
 system following the simple `spec-interface.md` contract.
 
 When you need to turn a document, a spec, a code change, or a design proposal into a
@@ -15,7 +15,7 @@ other, per-section feedback the reader can collect with one click — this skill
 the tokens, two layout archetypes, two tag profiles, DIFF mode for incremental re-reviews,
 and a double-clickable example to copy from.
 
-**Bundled default**: DNA1 — *academic journal × architecture magazine. Mono labels for
+**Bundled default**: Evidence Poet — *academic journal × architecture magazine. Mono labels for
 information order, serif headlines for narrative weight, gold lines for moments worth
 pausing. Sharp corners. CJK-safe font stacks (Microsoft YaHei first). Restrained, rational,
 never cold.* If that's not your style, plug in your own spec (see Step 0).
@@ -48,7 +48,7 @@ Do **not** trigger for:
   line widths, corner convention. **Read this first.**
 - **`references/tokens.css`** — base tokens + review-semantic extensions
   (`--review-*` · `--audit-*`) + the YaHei-first font stacks (`--font-sans/serif/mono`).
-  **The base block defaults to DNA1 values**; when you load an external spec, the
+  **The base block defaults to Evidence Poet values**; when you load an external spec, the
   generation step substitutes the spec's §0 JSON values into the base block. The
   review-extension tokens (tag colors) are tool-defined and stay constant — they're the
   tool's visual identity, not the spec's.
@@ -84,9 +84,9 @@ The skill resolves the spec to use, in this order:
    my spec at ./tokens.md"), use that path.
 2. **Project-detected** — if `<project>/.claude/design.md` exists (e.g. installed by
    `evidence-poet-installer` or any compatible installer), use it.
-3. **Bundled default** — use `specs/dna1-default.md` (a verbatim DNA1 spec mirror).
+3. **Bundled default** — use `specs/default-spec.md` (a verbatim Evidence Poet spec mirror).
 
-Confirm which spec is in use in one line before proceeding ("Using spec: DNA1 default
+Confirm which spec is in use in one line before proceeding ("Using spec: Evidence Poet default
 (bundled)" or "Using spec: ./design.md (project-local)").
 
 **Spec validity check** — open the chosen spec, find its §0 JSON block, verify it
@@ -108,7 +108,7 @@ layer, mostly tool-defined). Lock these four before writing any HTML:
   When an external spec is loaded, the spec's font roles substitute *before* the CJK
   fallback chain (i.e. spec's primary serif/sans/mono come first, YaHei stack stays as
   fallback).
-- **Sharp corners** — `tokens.css` defaults to the DNA1 convention (`border-radius: 0`
+- **Sharp corners** — `tokens.css` defaults to the Evidence Poet convention (`border-radius: 0`
   globally). If your spec sets `cornerRadius` > 0, the global reset is removed and corners
   use the spec value.
 - **3 font roles** — serif (headlines) · sans (body) · mono (labels / tags / CTA). Roles
@@ -180,7 +180,7 @@ This skill does its own structural validation (HTML well-formed · `lang` attrib
 · feedback-collector loaded · CSS variables resolve). For independent design-system
 compliance audit, use a spec-driven auditor.
 
-If you use DNA1, the `evidence-poet-auditor` covers review HTML (run with
+If you use Evidence Poet, the `evidence-poet-auditor` covers review HTML (run with
 `--surface=review-html`):
 
 ```bash
@@ -189,7 +189,7 @@ node ~/.claude/skills/evidence-poet-auditor/audit.mjs <path-to-your-review.html>
 ```
 
 Install: `git clone https://github.com/mengzhou0125/evidence-poet-design-system && ./install.sh auditor`.
-For non-DNA1 specs: use any spec-driven auditor that accepts your spec format.
+For non-Evidence Poet specs: use any spec-driven auditor that accepts your spec format.
 
 ---
 
@@ -207,7 +207,7 @@ For non-DNA1 specs: use any spec-driven auditor that accepts your spec format.
 ## What this skill does NOT do
 
 - Does not install a design system into a project (use a separate installer — e.g.
-  `evidence-poet-installer` for DNA1)
+  `evidence-poet-installer` for Evidence Poet)
 - Does not edit the source document being reviewed (the rail proposes; the human decides;
   the edit is a separate step)
 - Does not run package managers, build, or deploy
@@ -217,12 +217,12 @@ For non-DNA1 specs: use any spec-driven auditor that accepts your spec format.
 
 ---
 
-## Companion tools (optional · for the DNA1 ecosystem)
+## Companion tools (optional · for the Evidence Poet ecosystem)
 
 | Tool | Repo | Role |
 |---|---|---|
-| `evidence-poet-installer` | [evidence-poet-design-system](https://github.com/mengzhou0125/evidence-poet-design-system) | Install DNA1 into a project as `<project>/.claude/design.md` · this skill auto-detects |
-| `evidence-poet-builder` | same | Build React / vanilla / data-dense surfaces in DNA1 (the generalist · review surface defers here) |
+| `evidence-poet-installer` | [evidence-poet-design-system](https://github.com/mengzhou0125/evidence-poet-design-system) | Install Evidence Poet into a project as `<project>/.claude/design.md` · this skill auto-detects |
+| `evidence-poet-builder` | same | Build React / vanilla / data-dense surfaces in Evidence Poet (the generalist · review surface defers here) |
 | `evidence-poet-auditor` | same | Audit any artifact against the spec · use for design-system compliance |
 | `svg-diagram-skill` | [svg-diagram-skill](https://github.com/mengzhou0125/svg-diagram-skill) | Sibling tool · same pluggable-spec pattern · for standalone SVG diagrams |
 

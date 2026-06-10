@@ -28,7 +28,7 @@
  *     archetypes — A (.section-pair + .section-label / h2.section-title) and
  *     B (.section + .section-head h2). Falls back to the .fb-label text.
  *
- * COLORS are DNA1 canonical hex inline (ink #1A1A18 · gold #C8A84B · paper
+ * COLORS are Evidence Poet canonical hex inline (ink #1A1A18 · gold #C8A84B · paper
  * #F8F7F3 · sage #5A7A5A · terracotta #A85F4D) — kept literal so the script is
  * self-contained and works even when pasted into a CSS-less context.
  * ═══════════════════════════════════════════════════════════════════ */

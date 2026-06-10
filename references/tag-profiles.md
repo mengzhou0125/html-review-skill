@@ -1,8 +1,8 @@
 # Tag Profiles · Editorial vs Technical
 
-DNA1 review-HTML supports **two tag schemas**. Pick one per review HTML — they share the
+Evidence Poet review-HTML supports **two tag schemas**. Pick one per review HTML — they share the
 same outer frame (`tokens.css` + `components.css` + layout archetypes) but the chips and
-their semantics differ. Both are CSS extensions per the DNA1 §"Extension governance" rule
+their semantics differ. Both are CSS extensions per the Evidence Poet §"Extension governance" rule
 — every color carries an inline WCAG contrast comment.
 
 | Profile | Use case | Schema | Cardinality |
@@ -112,7 +112,7 @@ the visual signal that severity is **orthogonal** to the chromatic axes.
 
 | Element | Style | Reason |
 |---|---|---|
-| Status / Layer / Severity tags | **filled** dark bg + white text · `font-mono` 10px · `letter-spacing: 0.06em` | high recognition · compact · DNA1 mono-label role |
+| Status / Layer / Severity tags | **filled** dark bg + white text · `font-mono` 10px · `letter-spacing: 0.06em` | high recognition · compact · Evidence Poet mono-label role |
 | `.r-compare` before/after blocks | **outlined** light bg + dark border-left + ink text | readable for longer text |
 | `.card-box` (mock UI preview cards) | outlined matching status color scheme | mirrors deployed visual |
 | `.audit-box` (informational panels) | Cool Blue-Gray left accent · NOT a status color | information ≠ change |
@@ -142,7 +142,7 @@ the visual signal that severity is **orthogonal** to the chromatic axes.
 
 ## Why this is a BP extension, not a base spec rule
 
-This 2-profile tag system is an **extension** of DNA1 (per `dna1-spec.md` §"Extension
+This 2-profile tag system is an **extension** of Evidence Poet (per `spec.md` §"Extension
 governance" rule 5) — not part of the canonical §0 JSON tokens. It lives here because it's
 **apply-time** guidance specific to the review-HTML surface. The base spec stays
 surface-agnostic.
@@ -165,4 +165,4 @@ status, or a new layer dimension), it's an extension:
 4. **Don't break orthogonality** — if a new axis duplicates the function of an existing one
    (e.g., second "severity" axis), refuse and use the existing.
 
-See `dna1-spec.md` §"Extension governance" rules 1–5 for the full discipline.
+See `spec.md` §"Extension governance" rules 1–5 for the full discipline.

@@ -1,7 +1,7 @@
 # Design System Spec Interface
 
 This document defines the contract this skill expects from a design-system spec — whether
-the bundled DNA1 default or an external one. **If your spec exposes the keys below, the
+the bundled Evidence Poet default or an external one. **If your spec exposes the keys below, the
 skill can use it.**
 
 The spec is a markdown file with a §0 JSON block. The skill parses that JSON and
@@ -15,13 +15,13 @@ The skill resolves which spec to use, in this order:
 
 1. **Explicit** — `--spec=<path>` argument or user explicitly names a path
 2. **Project-detected** — `<project>/.claude/design.md` exists
-3. **Bundled default** — `specs/dna1-default.md` (DNA1)
+3. **Bundled default** — `specs/default-spec.md` (Evidence Poet)
 
 ---
 
 ## Required keys in the §0 JSON block
 
-The skill expects a JSON block like this somewhere in the spec markdown (DNA1's example
+The skill expects a JSON block like this somewhere in the spec markdown (Evidence Poet's example
 shown · adapt values to your system):
 
 ```json
@@ -123,7 +123,7 @@ loaded:
 - `--review-tech-severity-p0/p1/p2` (ink / mid / light grayscale)
 - `--audit-severity-high/mid/low` (audit-box informational gradient)
 
-These are **tool extensions per DNA1's "Extension governance" rule** — they live with the
+These are **tool extensions per Evidence Poet's "Extension governance" rule** — they live with the
 tool, not the spec. If you want different tag colors, fork this skill and edit
 `tokens.css`'s review-extension block. The tool stylizes its own UI on top of any spec's
 base palette.
@@ -137,9 +137,9 @@ mechanics — these are tool-defined patterns, independent of the loaded spec.
 
 ## Examples
 
-### DNA1 (bundled default)
+### Evidence Poet (bundled default)
 
-See `specs/dna1-default.md` §0. It's the spec this skill was designed against — every value
+See `specs/default-spec.md` §0. It's the spec this skill was designed against — every value
 above maps cleanly.
 
 ### Bringing your own spec
@@ -147,7 +147,7 @@ above maps cleanly.
 1. Create a markdown file with a §0 JSON block following the schema above
 2. Either save it at `<project>/.claude/design.md` (auto-detected) OR pass
    `--spec=<path>` explicitly
-3. Run the skill normally — the bundled `specs/dna1-default.md` is replaced
+3. Run the skill normally — the bundled `specs/default-spec.md` is replaced
 
 ---
 

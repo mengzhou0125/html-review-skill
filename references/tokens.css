@@ -1,16 +1,16 @@
 /* ═══════════════════════════════════════════════════════════════════
  * Review HTML · Design Tokens · v1.0 · 2026-05-16
  *
- * Source-of-truth: DNA1 design system (portfolio/style/design.md · §0 JSON)
+ * Source-of-truth: Evidence Poet design system (portfolio/style/design.md · §0 JSON)
  * Review extensions: layered on top · clearly marked with `--review-*` prefix
  *
- * To inherit DNA1 base into a React app: prefer importing
- * your project's `variables.css` + `theme-dna1.css` (DNA1 React implementation layer).
+ * To inherit Evidence Poet base into a React app: prefer importing
+ * your project's `variables.css` + `theme-evidence-poet.css` (Evidence Poet React implementation layer).
  * This file is the standalone-HTML reference + the review-extension definitions.
  * ═══════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* ─── DNA1 base · color ──────────────────────────────────────────── */
+  /* ─── Evidence Poet base · color ──────────────────────────────────────────── */
   --color-bg: #F8F7F3;                /* warm paper · page bg */
   --color-text: #1A1A18;              /* ink black · primary text */
   --color-text-secondary: #555;
@@ -28,7 +28,7 @@
   --color-active-border: rgba(200, 168, 75, 0.25);
   --color-on-dark: #FFFFFF;           /* inverse text · review-extension · filled-label text */
 
-  /* ─── DNA1 base · spacing scale (4px-rooted) ─────────────────────── */
+  /* ─── Evidence Poet base · spacing scale (4px-rooted) ─────────────────────── */
   --space-3xs: 2px;                   /* review-extension · sub-base for tag-padding micro values */
   --space-2xs: 4px;
   --space-xs:  8px;
@@ -43,7 +43,7 @@
   --space-6xl: 80px;
   --space-7xl: 120px;
 
-  /* ─── DNA1 base · font-size scale (mirrored from React variables.css) ─ */
+  /* ─── Evidence Poet base · font-size scale (mirrored from React variables.css) ─ */
   --font-size-3xs: 10px;              /* review-extension · for very small filled labels */
   --font-size-2xs: 11px;
   --font-size-xs:  12px;
@@ -59,7 +59,7 @@
   --font-size-6xl: 40px;
   --font-size-7xl: 42px;
 
-  /* ─── DNA1 base · line / motion ──────────────────────────────────── */
+  /* ─── Evidence Poet base · line / motion ──────────────────────────────────── */
   --hairline: 1px;                    /* design.md §0 borderWidth: 1 */
   --line-accent: 3px;                 /* design.md §0 accentLineWidth: 3 */
   --ease-default: cubic-bezier(0.16, 1, 0.3, 1);
@@ -98,7 +98,7 @@
   --review-改-light: #F8F2E0;                   /* light gold tint · WCAG 11.8:1 ink-on-this · safe for body text */
   --review-orig-fill: var(--color-text-muted);  /* 原 · neutral gray #717171 */
   --review-orig-light: var(--color-bg);         /* warm paper · WCAG 13:1 ink-on-this */
-  --review-del-fill: #A85F4D;                   /* 删 · terracotta · no DNA1 equivalent · WCAG 4.8:1 white-on-this */
+  --review-del-fill: #A85F4D;                   /* 删 · terracotta · no Evidence Poet equivalent · WCAG 4.8:1 white-on-this */
   --review-del-light: #F3EAE7;                  /* light coral tint · WCAG 11.4:1 ink-on-this · safe for body text */
 
   /* EN aliases for CN-named status tokens (per X1 builder ergonomics) */
@@ -137,7 +137,7 @@
    * ═══════════════════════════════════════════════════════════════════ */
   --audit-severity-high: var(--review-del-fill);       /* terracotta · severe issue · WCAG 4.8:1 */
   --audit-severity-mid:  var(--color-accent-dark);     /* gold-dark · plan-to-fix · WCAG-AA pass */
-  --audit-severity-low:  #5A8A5A;                      /* sage green · OK · no DNA1 equiv · WCAG 4.6:1 */
+  --audit-severity-low:  #5A8A5A;                      /* sage green · OK · no Evidence Poet equiv · WCAG 4.6:1 */
 
   /* Legacy aliases · kept until 2026-Q3 deprecation · DO NOT USE in new code */
   --severity-high: var(--audit-severity-high);         /* DEPRECATED · rename to --audit-severity-* */

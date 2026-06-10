@@ -4,10 +4,10 @@ A Claude Code skill that renders a document, spec, code change, or design propos
 **side-by-side review HTML** — content + AI rationale annotations + per-section feedback
 collector.
 
-**Pluggable design system.** Bundles the **DNA1 ("Evidence Poet")** spec as the default
+**Pluggable design system.** Bundles the **Evidence Poet** spec as the default
 visual style. Accept any external spec following the simple `spec-interface.md` contract.
 
-> DNA1 default character: *academic journal × architecture magazine — mono labels for
+> Evidence Poet default character: *academic journal × architecture magazine — mono labels for
 > information order, serif headlines for narrative weight, gold lines for moments worth
 > pausing. Sharp corners. CJK-safe font stacks (Microsoft YaHei first). Restrained,
 > rational, never cold.*
@@ -42,7 +42,7 @@ review this in HTML · side-by-side with annotations
 ## How it works
 
 1. **Step 0 · Resolve a spec** — `--spec=<path>` arg · or auto-detect
-   `<project>/.claude/design.md` · or fall back to bundled `specs/dna1-default.md`
+   `<project>/.claude/design.md` · or fall back to bundled `specs/default-spec.md`
 2. Asks **one bootstrap question** (what + how long) and infers:
    - **Layout archetype** A (right-rail · sticky annotation rail beside content) vs B
      (stacked · annotations inline under content)
@@ -60,7 +60,7 @@ review this in HTML · side-by-side with annotations
 For independent design-system compliance audit (separate from the skill's structural
 validation): use a spec-driven auditor. The
 [`evidence-poet-auditor`](https://github.com/mengzhou0125/evidence-poet-design-system) covers
-DNA1; for other specs, bring your own.
+Evidence Poet; for other specs, bring your own.
 
 ---
 
@@ -71,8 +71,8 @@ Three ways the skill resolves which spec to use, in priority order:
 | Priority | Source | When |
 |---|---|---|
 | 1 | `--spec=<path>` arg or user prompt names a path | explicit |
-| 2 | `<project>/.claude/design.md` | EPDS installed or similar |
-| 3 | bundled `specs/dna1-default.md` | default · DNA1 |
+| 2 | `<project>/.claude/design.md` | the Evidence Poet Design System installer (EPDS) has been run · or any compatible |
+| 3 | bundled `specs/default-spec.md` | default · Evidence Poet |
 
 To bring your own spec, write a markdown file with a §0 JSON block following the contract
 in [`references/spec-interface.md`](references/spec-interface.md). The contract is narrow
@@ -87,7 +87,7 @@ need different tag colors.
 
 ## What it does NOT do
 
-- Does not install a design system into your project — for DNA1, use
+- Does not install a design system into your project — for Evidence Poet, use
   [evidence-poet-installer](https://github.com/mengzhou0125/evidence-poet-design-system)
 - Does not edit the source document being reviewed (the rail proposes; the human decides;
   the edit is a separate step)
@@ -101,7 +101,7 @@ need different tag colors.
 
 | Tool | Repo | Role |
 |---|---|---|
-| `evidence-poet-design-system` | [evidence-poet-design-system](https://github.com/mengzhou0125/evidence-poet-design-system) | The DNA1 design system: installer + builder + auditor. The visual style bundled here as `specs/dna1-default.md`. |
+| `evidence-poet-design-system` | [evidence-poet-design-system](https://github.com/mengzhou0125/evidence-poet-design-system) | The Evidence Poet design system: installer + builder + auditor. The visual style bundled here as `specs/default-spec.md`. |
 | `svg-diagram-skill` | [svg-diagram-skill](https://github.com/mengzhou0125/svg-diagram-skill) | Sibling tool · same pluggable-spec pattern · for standalone SVG diagrams |
 
 ---
@@ -123,22 +123,8 @@ references/
   review-roles.md            Layer 0 baseline + Layer 1+ role taxonomy
   diff-mode.md               incremental re-review mode
 specs/
-  dna1-default.md            🆕 bundled default · DNA1 spec (mirror of EPDS canonical)
+  default-spec.md            🆕 bundled default · Evidence Poet spec (mirror of the EPDS canonical)
 ```
-
----
-
-## Migrating from `evidence-poet-review`
-
-This skill is the successor to `evidence-poet-review` (which lived inside the
-`evidence-poet-design-system` monorepo). If you previously installed that:
-
-```bash
-rm -rf ~/.claude/skills/evidence-poet-review
-./install.sh                 # installs html-review-skill
-```
-
-Same functionality, additional pluggable-spec support.
 
 ---
 

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
  * Review HTML · Component Styles · v1.4 · 2026-05-31
- * (v1.2 · 2026-05-30: DNA1 lining+tabular figures on .metric .v · portfolio 05-18-003)
+ * (v1.2 · 2026-05-30: Evidence Poet lining+tabular figures on .metric .v · portfolio 05-18-003)
  * (v1.3 · 2026-05-30: shared left-ToC frame (.toc-layout/.toc-nav · BOTH archetypes ·
  *  A=--rail B=--stacked) + .user-feedback block + .summary-block counts · extracted from
  *  2026-05-25_layer1_spec_review · pairs with feedback-collector.js · see README §"Layout archetypes")
@@ -33,7 +33,7 @@ body {
 .wrap p { margin: 0 0 var(--space-md); }
 .wrap p:last-child { margin-bottom: 0; }
 
-/* ─── Typography · DNA1 three-font tension ──────────────────────────── */
+/* ─── Typography · Evidence Poet three-font tension ──────────────────────────── */
 h1.hero-title,
 h2.section-title,
 h3.kd-title {
@@ -54,7 +54,7 @@ h3.kd-title    { font-size: var(--font-size-3xl); line-height: 1.3; font-weight:
   font-weight: 400;
 }
 
-/* ─── Inline links · DNA1 body inline link rule ────────────────────── */
+/* ─── Inline links · Evidence Poet body inline link rule ────────────────────── */
 a {
   color: var(--color-cta-muted);
   text-decoration: underline;
@@ -150,7 +150,7 @@ section.hero { padding: 0; }
 .role-imgs .img-block img { max-width: var(--img-review-max); width: 100%; }
 .role-imgs .img-block .caption { padding-top: var(--space-xs); }
 
-/* ─── Captions · DNA1 Style A/B ─────────────────────────────────────── */
+/* ─── Captions · Evidence Poet Style A/B ─────────────────────────────────────── */
 .caption { font-size: var(--font-size-base); line-height: 1.7; color: var(--color-text-tertiary); }
 .caption-title {
   font-family: var(--font-serif);
@@ -190,7 +190,7 @@ section.hero { padding: 0; }
   font-family: var(--font-serif);
   font-size: var(--font-size-4xl);
   font-weight: 700;
-  /* DNA1 §3 Principles 5:
+  /* Evidence Poet §3 Principles 5:
      serif numerals ≥24px with mixed glyphs use lining + tabular figures.
      Playfair defaults to oldstyle figures (descenders) that misalign next to
      letters/symbols (e.g. "$170M+", "4M+"). Apply to any serif-numeral-at-scale
@@ -563,5 +563,5 @@ html { scroll-behavior: smooth; }
 .summary-block .count-item .n {
   font-family: var(--font-serif); font-size: var(--font-size-4xl); font-weight: 700;
   display: block; line-height: 1.2;
-  font-variant-numeric: lining-nums tabular-nums;   /* DNA1 §3 Principles 5 · serif numerals ≥24px (same rule as .metric .v) */
+  font-variant-numeric: lining-nums tabular-nums;   /* Evidence Poet §3 Principles 5 · serif numerals ≥24px (same rule as .metric .v) */
 }
