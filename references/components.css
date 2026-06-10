@@ -190,7 +190,7 @@ section.hero { padding: 0; }
   font-family: var(--font-serif);
   font-size: var(--font-size-4xl);
   font-weight: 700;
-  /* DNA1 §3 Principles 5 (propagated 2026-05-30 · portfolio outbox 2026-05-18-003):
+  /* DNA1 §3 Principles 5:
      serif numerals ≥24px with mixed glyphs use lining + tabular figures.
      Playfair defaults to oldstyle figures (descenders) that misalign next to
      letters/symbols (e.g. "$170M+", "4M+"). Apply to any serif-numeral-at-scale
