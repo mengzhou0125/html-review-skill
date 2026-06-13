@@ -5,7 +5,7 @@
  * Review extensions: layered on top · clearly marked with `--review-*` prefix
  *
  * To inherit Evidence Poet base into a React app: prefer importing
- * your project's `variables.css` + `theme-evidence-poet.css` (Evidence Poet React implementation layer).
+ * your project's `variables.css` + `theme-dna1.css` (Evidence Poet React implementation layer · `dna1` = internal codename · see canonical `portfolio/style/design.md` §"Naming convention").
  * This file is the standalone-HTML reference + the review-extension definitions.
  * ═══════════════════════════════════════════════════════════════════ */
 
