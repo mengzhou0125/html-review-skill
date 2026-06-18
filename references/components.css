@@ -326,9 +326,9 @@ section.hero { padding: 0; }
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.audit-box .sev-high { color: var(--severity-high); font-weight: 600; }
-.audit-box .sev-mid  { color: var(--severity-mid);  font-weight: 600; }
-.audit-box .sev-low  { color: var(--severity-low);  font-weight: 600; }
+.audit-box .sev-high { color: var(--audit-severity-high); font-weight: 600; }
+.audit-box .sev-mid  { color: var(--audit-severity-mid);  font-weight: 600; }
+.audit-box .sev-low  { color: var(--audit-severity-low);  font-weight: 600; }
 
 /* ═══ RATIONALE SIDEBAR · annotation panel · neutral border only ═════ */
 .rationale {

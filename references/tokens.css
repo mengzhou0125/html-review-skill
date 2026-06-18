@@ -131,16 +131,12 @@
   --review-tech-severity-p1: #555555;           /* P1 · mid · should · WCAG 7.5:1 white-on-this */
   --review-tech-severity-p2: #717171;           /* P2 · light · note · WCAG 4.6:1 white-on-this · floor */
 
-  /* ═══ Audit-box gradient (RENAMED 2026-05-26 per §X1 disambiguation) ═══
-   * Was: --severity-high/mid/low (confused with review-note severity P0/P1/P2)
-   * Now: --audit-severity-* (informational gradient · audit-box only · NOT tag axis)
+  /* ═══ Audit-box gradient (informational gradient · audit-box only · NOT tag axis) ═══
+   * Canonical name: --audit-severity-* (renamed 2026-05-26 per §X1 disambiguation
+   * from the old --severity-high/mid/low, which was confused with review-note severity
+   * P0/P1/P2). The deprecated --severity-* aliases were removed 2026-06-17 · migration done.
    * ═══════════════════════════════════════════════════════════════════ */
   --audit-severity-high: var(--review-del-fill);       /* terracotta · severe issue · WCAG 4.8:1 */
   --audit-severity-mid:  var(--color-accent-dark);     /* gold-dark · plan-to-fix · WCAG-AA pass */
   --audit-severity-low:  #5A8A5A;                      /* sage green · OK · no Evidence Poet equiv · WCAG 4.6:1 */
-
-  /* Legacy aliases · kept until 2026-Q3 deprecation · DO NOT USE in new code */
-  --severity-high: var(--audit-severity-high);         /* DEPRECATED · rename to --audit-severity-* */
-  --severity-mid:  var(--audit-severity-mid);
-  --severity-low:  var(--audit-severity-low);
 }
