@@ -71,6 +71,9 @@ Do **not** trigger for:
   spec-rootedness auditor, body↔caption checker, etc.).
 - **`references/diff-mode.md`** — incremental re-review mode: section-level
   state tags, changed/unchanged visual treatment, source-of-diff strategy.
+- **`references/build-invariants.md`** — the MANDATORY `<!-- BUILD INVARIANTS -->`
+  header block: lead every review HTML with it to stop passive-rule drift (mirror of the
+  `visual_review_html` BP · canonical there).
 
 ---
 
@@ -151,6 +154,11 @@ Both archetypes share the same outer frame. The **only** difference is annotatio
 **One archetype per review HTML** — don't mix.
 
 ### Step 5 · Build · copy patterns from `example.html`
+
+**Lead the file with the `<!-- BUILD INVARIANTS -->` block** (see `references/build-invariants.md`) —
+MANDATORY, before any markup. Restating the profile / language / fonts / images / captions rules
+inside the artifact is the active step that stops passive-rule drift; a review HTML without the block
+is the tell of a passive-cache build. `example.html` shows the block in place.
 
 The example uses **only** the classes defined in `tokens.css` + `components.css`. Copy the
 structure (full template in `example.html`). When a non-default spec is loaded, the
